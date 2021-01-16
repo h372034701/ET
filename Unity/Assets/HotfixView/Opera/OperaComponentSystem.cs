@@ -36,7 +36,7 @@ namespace ET
                     self.ZoneScene().GetComponent<SessionComponent>().Session.Send(self.frameClickMap);
 
                     // 测试actor rpc消息
-                    self.TestActor().Coroutine();
+                    // self.TestActor().Coroutine();
                 }
             }
         }

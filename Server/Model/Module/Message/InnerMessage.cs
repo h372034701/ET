@@ -379,6 +379,49 @@ namespace ET
 
 	}
 
+	[Message(InnerOpcode.G2M_CreateBattleField)]
+	[ProtoContract]
+	public partial class G2M_CreateBattleField: IActorRequest
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(93)]
+		public long ActorId { get; set; }
+
+		[ProtoMember(1)]
+		public long PlayerId { get; set; }
+
+		[ProtoMember(2)]
+		public long GateSessionId { get; set; }
+
+	}
+
+	[Message(InnerOpcode.M2G_CreateBattleField)]
+	[ProtoContract]
+	public partial class M2G_CreateBattleField: IActorResponse
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public int Error { get; set; }
+
+		[ProtoMember(92)]
+		public string Message { get; set; }
+
+// 自己的unit id
+// 自己的unit id
+		[ProtoMember(1)]
+		public long UnitId { get; set; }
+
+// 所有的unit
+// 所有的unit
+		[ProtoMember(2)]
+		public List<UnitInfo> Units = new List<UnitInfo>();
+
+	}
+
 	[Message(InnerOpcode.G2M_SessionDisconnect)]
 	[ProtoContract]
 	public partial class G2M_SessionDisconnect: IActorLocationMessage

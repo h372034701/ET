@@ -9,7 +9,7 @@ namespace ET
 
         public void Register(Action callback)
         {
-            this.action = callback;
+            this.action += callback;
         }
 
         public void Cancel()

@@ -102,6 +102,7 @@ namespace ET
 						this.awakeSystems.Add(objectSystem.Type(), objectSystem);
 						break;
 					case IUpdateSystem updateSystem:
+						Log.Info($"IUpdateSystem {updateSystem.Type()} {assembly.ManifestModule.ScopeName}");
 						this.updateSystems.Add(updateSystem.Type(), updateSystem);
 						break;
 					case ILateUpdateSystem lateUpdateSystem:

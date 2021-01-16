@@ -28,6 +28,7 @@ namespace ET
                     scene.AddComponent<GateSessionKeyComponent>();
                     break;
                 case SceneType.Map:
+                    scene.AddComponent<BattleFieldsComponent>();
                     scene.AddComponent<UnitComponent>();
                     break;
                 case SceneType.Location:
